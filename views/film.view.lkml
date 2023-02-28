@@ -58,6 +58,11 @@ view: film {
     sql: ${TABLE}."rental_duration" ;;
   }
 
+  measure: average_rental_duration {
+    type: average
+    sql: ${rental_duration} ;;
+  }
+
   dimension: rental_rate {
     type: number
     sql: ${TABLE}."rental_rate" ;;
