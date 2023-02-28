@@ -54,7 +54,7 @@ view: film {
   }
 
   dimension: rental_duration {
-    type: number
+    type: string
     sql: ${TABLE}."rental_duration" ;;
   }
 
