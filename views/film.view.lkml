@@ -45,7 +45,11 @@ view: film {
 
   dimension: rating {
     type: string
-    sql: ${TABLE}."rating" ;;
+    sql: CASE
+          WHEN ${TABLE}."rating" = 3 THEN NULL
+          ELSE ${TABLE}."rating"
+        END;;
+
   }
 
   dimension: release_year {
