@@ -45,7 +45,14 @@ view: film {
 
   dimension: rating {
     type: string
-    sql: NULLIF(${TABLE}."rating", CHAR(3) );;
+
+    sql: CASE
+          WHEN ${TABLE}."rating" = VARCHAR(3) THEN NULL
+          ELSE ${TABLE}."rating"
+        END;;
+
+    ##  NULLIF(${TABLE}."rating", CHAR(3)
+
   }
 
   dimension: release_year {
