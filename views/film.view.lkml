@@ -45,11 +45,7 @@ view: film {
 
   dimension: rating {
     type: string
-    sql: CASE
-          WHEN ${TABLE}."rating" = "3" THEN NULL
-          ELSE ${TABLE}."rating"
-        END;;
-
+    sql: NULLIF(${TABLE}."rating", "3");;
   }
 
   dimension: release_year {
