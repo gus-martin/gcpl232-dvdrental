@@ -63,7 +63,10 @@ view: film {
 
   dimension: rental_duration {
     type: string
-    sql: ${TABLE}."rental_duration" ;;
+    sql: CASE
+          WHEN CAST(${TABLE}."rental_duration" AS VARCHAR(20)) = CAST ('3' AS VARCHAR(1)) THEN NULL
+          ELSE ${TABLE}."rental_duration"
+        END;;
   }
 
   measure: average_rental_duration {
