@@ -47,7 +47,7 @@ view: film {
     type: string
 
     sql: CASE
-          WHEN ${TABLE}."rating" = VARCHAR(3) THEN NULL
+          WHEN ${TABLE}."rating" = VARCHAR(3) THEN "giii"
           ELSE ${TABLE}."rating"
         END;;
 
