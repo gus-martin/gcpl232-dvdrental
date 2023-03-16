@@ -47,10 +47,11 @@ view: film {
     type: string
 
     sql: CASE
-          WHEN ${TABLE}."rating" = VARCHAR(3) THEN "giii"
+          WHEN ${TABLE}."rating" = CAST (3 AS VARCHAR(1)) THEN "giii"
           ELSE ${TABLE}."rating"
         END;;
 
+    ##CAST ( expression AS target_type )
     ##  NULLIF(${TABLE}."rating", CHAR(3)
 
   }
