@@ -47,7 +47,7 @@ view: film {
     type: string
 
     sql: CASE
-          WHEN CAST(${TABLE}."rating" AS VARCHAR(20)) = CAST (G AS VARCHAR(1)) THEN NULL
+          WHEN CAST(${TABLE}."rating" AS VARCHAR(20)) = CAST ('G' AS VARCHAR(1)) THEN NULL
           ELSE ${TABLE}."rating"
         END;;
 
