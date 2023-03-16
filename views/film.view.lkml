@@ -62,10 +62,11 @@ view: film {
   }
 
   dimension: rental_duration {
+    ## changed for testing
     type: string
     sql: CASE
-          WHEN CAST(${TABLE}."rental_duration" AS VARCHAR(20)) = CAST ('3' AS VARCHAR(1)) THEN NULL
-          ELSE ${TABLE}."rental_duration"
+          WHEN CAST(${TABLE}."rating" AS VARCHAR(20)) = CAST ('G' AS VARCHAR(1)) THEN NULL
+          ELSE ${TABLE}."rating"
         END;;
   }
 
